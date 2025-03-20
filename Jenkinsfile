@@ -34,7 +34,7 @@ pipeline {
                     sh 'sudo cp -r * /var/www/html'
                     
                     // Start a simple HTTP server using Python
-                    sh 'nohup python3 -m http.server 8080 --directory /var/www/html &'
+                    sh 'nohup python3 -m http.server 8000 --directory /var/www/html &'
                 }
             }
         }
