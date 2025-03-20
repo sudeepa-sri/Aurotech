@@ -1,0 +1,38 @@
+bool isAnagram(char* s, char* t) {
+      int a[26], b[26];
+    int i, j;
+
+    for (i = 0; i < 26; i++) {
+        a[i] = 0;
+        b[i] = 0;
+    }
+
+    if (strlen(s) == strlen(t)) {
+        for (i = 0; i < strlen(s); i++) {
+            for (j = 0; j < 26; j++) {
+                if (j == (s[i] - 96)) {
+                    a[j] = a[j] + 1;
+                }
+            }
+        }
+        
+        for (i = 0; i < strlen(t); i++) {
+            for (j = 0; j < 26; j++) {
+                if (j == (t[i] - 96)) {
+                    b[j] = b[j] + 1;
+                }
+            }
+        }
+        
+        for (i = 0; i < 26; i++) {
+            if (a[i] != b[i]) {
+                return false;
+            }
+        }
+        
+        return true;
+    } else {
+        return false;
+    }
+}
+  
